@@ -8,12 +8,31 @@
 
 #import "AppDelegate.h"
 #import "MainPage.h"
+#import "APIKey.h"
+#import <MAMapKit/MAMapKit.h>
+#import "NSString+deviceString.h"
 @implementation AppDelegate
+
+-(void)configureAPIkey{
+    if([APIKey length]==0){
+        NSString *name   = [NSString stringWithFormat:@"\nSDKVersion:%@\nFILE:%s\nLINE:%d\nMETHOD:%s", [MAMapServices sharedServices].SDKVersion, __FILE__, __LINE__, __func__];
+        NSString *reason = [NSString stringWithFormat:@"请首先配置APIKey.h中的APIKey, 申请APIKey参考见 http://api.amap.com"];
+        
+        @throw [NSException exceptionWithName:name
+                                       reason:reason
+                                     userInfo:nil];
+    }
+    [MAMapServices sharedServices].apiKey=(NSString *)APIKey;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSString *deviceString=[NSString deviceString];
+    NSLog(@"------------------------------%@",deviceString);
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    [self configureAPIkey];
     MainPage *Page=[[MainPage alloc]initWithNibName:@"MainPage" bundle:nil];
     self.window.rootViewController=Page;
     self.window.backgroundColor = [UIColor whiteColor];

@@ -20,14 +20,14 @@
              target:(id)target action:(SEL)action {
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setFrame:CGRectMake(0.0f, 0.0f, 55.0f, 37.0f)];
+    [btn setFrame:CGRectMake(0.0f, 0.0f, 45.0f, 37.0f)];
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     [btn setImage:image forState:UIControlStateNormal];
     [btn setImage:selectedImage forState:UIControlStateHighlighted];
-    
+    btn.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
     /* Init method inherited from UIBarButtonItem */
     self = [[ILBarButtonItem alloc] initWithCustomView:btn];
-
+    
     if (self) {
         /* Assign ivars */
         customButton = btn;

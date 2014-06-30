@@ -14,19 +14,29 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signin_blue_dot.png" translatesAutoresizingMaskIntoConstraints="NO" id="5jb-VJ-v55">
-                        <rect key="frame" x="34" y="19" width="25" height="25"/>
+                        <rect key="frame" x="34" y="17" width="25" height="25"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signin_blue_arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="zJ3-KS-Klb">
-                        <rect key="frame" x="62" y="27" width="11" height="10"/>
+                        <rect key="frame" x="62" y="25" width="11" height="10"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signin_blue_frame.png" translatesAutoresizingMaskIntoConstraints="NO" id="k3F-uI-adq">
-                        <rect key="frame" x="67" y="2" width="237" height="64"/>
+                        <rect key="frame" x="67" y="3" width="237" height="54"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="206" translatesAutoresizingMaskIntoConstraints="NO" id="f67-s1-pTf">
+                        <rect key="frame" x="88" y="4" width="206" height="51"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="label" destination="f67-s1-pTf" id="grs-47-9Z7"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

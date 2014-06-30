@@ -8,6 +8,7 @@
 
 #import "CenterPage.h"
 #import "ILBarButtonItem.h"
+#import "MoLabel.h"
 @interface CenterPage ()
 
 @end
@@ -20,7 +21,6 @@
     if (self) {
         // Custom initialization
         self.tabBarItem=[[UITabBarItem alloc]initWithTitle:@"消息" image:[UIImage imageNamed:@"tab_bar_message_normal"] selectedImage:[UIImage imageNamed:@"tab_bar_message_highlight"]];
-        
 
     }
     return self;
@@ -30,11 +30,13 @@
 {
     [super viewDidLoad];
     ILBarButtonItem *settingsBtn =
-    [ILBarButtonItem barItemWithImage:[UIImage imageNamed:@"navigationItem_menu_hl"] selectedImage:nil
+    [ILBarButtonItem barItemWithImage:[UIImage imageNamed:@"navigationItem_menu"] selectedImage:[UIImage imageNamed:@"navigationItem_menu_hl"]
                                target:self
                                action:@selector(leftTapped:)];
-    self.navigationItem.leftBarButtonItem = settingsBtn;
-    
+    self.NavItem.leftBarButtonItem=settingsBtn;
+    MoLabel *label=[MoLabel LabelWithTitle:@"消息"];
+    self.NavItem.titleView = label;
+    [self.CustomNav setBackgroundImage:[UIImage imageNamed:@"nav_bar_bg"] forBarMetrics:UIBarMetricsDefault];
     // Do any additional setup after loading the view from its nib.
 }
 

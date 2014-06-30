@@ -10,5 +10,7 @@
 
 @interface CollectionCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *AppCell;
+@property (weak, nonatomic) IBOutlet UILabel *CellTitle;
 
 @end

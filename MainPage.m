@@ -62,7 +62,8 @@
     self.TabBarCon.viewControllers=@[CenterView,AppView,SearchView,NoteView];
     UINavigationController  *ViewNav = [[UINavigationController alloc] initWithRootViewController:self.TabBarCon];
     [ViewNav.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar_bg"] forBarMetrics:UIBarMetricsDefault];
-    
+    [ViewNav setNavigationBarHidden:YES animated:NO];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     IIViewDeckController *IIView=[[IIViewDeckController alloc]initWithCenterViewController:ViewNav leftViewController:LeftView];
     IIView.leftSize=60;
     self.Window.rootViewController=IIView;
