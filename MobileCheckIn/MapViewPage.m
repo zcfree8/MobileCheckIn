@@ -10,7 +10,8 @@
 #import "POIAnnotation.h"
 #import "CommonUtility.h"
 #import "GameUtils.h"
-
+#import "ILBarButtonItem.h"
+#import "MoLabel.h"
 @interface MapViewPage ()
 
 @end
@@ -98,7 +99,7 @@
 
 #pragma Mark - Initialization
 -(void)initMapView{
-    self.mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 280)];
+    self.mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 44, 320, 280)];
     self.mapView.delegate=self;
     [self.view addSubview:self.mapView];
     self.mapView.visibleMapRect=MAMapRectMake(220880104, 101476980, 272496, 466656);
@@ -128,7 +129,14 @@
     self.AnnotationNote=[NSMutableArray array];
     self.searchType=AMapSearchType_PlaceAround;
     [self.mapView setZoomLevel:self.mapView.maxZoomLevel-5 animated:YES];
-
+    ILBarButtonItem *settingsBtn =
+    [ILBarButtonItem barItemWithImage:[UIImage imageNamed:@"navigationItem_back"] selectedImage:[UIImage imageNamed:@"navigationItem_back_hl"]
+                               target:self
+                               action:@selector(leftTapped:)];
+    self.NavItem.leftBarButtonItem=settingsBtn;
+    MoLabel *label=[MoLabel LabelWithTitle:@"地图定位"];
+    self.NavItem.titleView=label;
+    [self.CustomNav setBackgroundImage:[UIImage imageNamed:@"nav_bar_bg"] forBarMetrics:UIBarMetricsDefault];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -199,6 +207,10 @@
     
     
     [self.search AMapPlaceSearch:request];
+}
+
+-(void)leftTapped:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

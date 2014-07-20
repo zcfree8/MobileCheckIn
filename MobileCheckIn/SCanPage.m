@@ -69,6 +69,9 @@
         }
     }
     
+    //添加控件
+    
+    
 }
 
 
@@ -93,6 +96,10 @@
 
 -(void)leftTapped:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)cancelAction:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

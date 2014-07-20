@@ -7,6 +7,7 @@
 //
 
 #import "LeftPage.h"
+#import "MainPage.h"
 
 @interface LeftPage ()
 
@@ -27,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -36,4 +38,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)ExitAction:(id)sender {
+    MainPage *mainPage=[[MainPage alloc]initWithNibName:@"MainPage" bundle:nil];
+    [self presentViewController:mainPage animated:NO completion:nil];
+}
 @end

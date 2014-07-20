@@ -48,18 +48,19 @@
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"signin_bg"]];
     
     UILabel *Month=[[UILabel alloc]initWithFrame:CGRectMake(35, 67, 30, 20)];
-    UILabel *Day=[[UILabel alloc]initWithFrame:CGRectMake(20, 70, 80, 80)];
+    UILabel *Day=[[UILabel alloc]initWithFrame:CGRectMake(26, 88, 40, 40)];
     
     [Month setTextColor:[UIColor whiteColor]];
     [Day setTextColor:[UIColor blackColor]];
     Month.font=[UIFont fontWithName:nil size:15];
-    Day.font=[UIFont fontWithName:nil size:45];
+    Day.font=[UIFont fontWithName:nil size:35];
     NSDate *date=[NSDate date];
     NSCalendar *calendar=[NSCalendar currentCalendar];
     NSDateComponents *comps;
     comps=[calendar components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:date];
     Month.text=[NSString stringWithFormat:@"%ld月",(long)[comps month]];
     Day.text=[NSString stringWithFormat:@"%ld",(long)[comps day]];
+    [Day setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:Month];
     [self.view addSubview:Day];
     _header=[[MJRefreshHeaderView alloc]init];

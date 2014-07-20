@@ -22,6 +22,10 @@
 -(void)retureAction;
 
 @property(nonatomic,strong)NSMutableArray *AnnotationNote;
+@property (weak, nonatomic) IBOutlet UINavigationBar *CustomNav;
+@property (weak, nonatomic) IBOutlet UINavigationItem *NavItem;
+
+
 @end
 
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>427EB0EE-6D4B-41F1-8A38-5FCC5676230A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MobileCheckIn</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>60172318-F2C2-464B-91C6-98BC95346819</key>
+		<string>https://github.com/zcfree8/MobileCheckIn.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MobileCheckIn.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>60172318-F2C2-464B-91C6-98BC95346819</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/zcfree8/MobileCheckIn.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>60172318-F2C2-464B-91C6-98BC95346819</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>60172318-F2C2-464B-91C6-98BC95346819</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MobileCheckIn</string>
+		</dict>
+	</array>
+</dict>
+</plist>

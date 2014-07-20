@@ -10,4 +10,6 @@
 
 @interface LeftPage : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *btnExit;
+- (IBAction)ExitAction:(id)sender;
 @end
