@@ -11,5 +11,15 @@
 @interface CenterPage : UIViewController
 @property (weak, nonatomic) IBOutlet UINavigationBar *CustomNav;
 @property (weak, nonatomic) IBOutlet UINavigationItem *NavItem;
+@property (weak, nonatomic) IBOutlet UITableView *MainTable;
+@property(nonatomic,strong)NSMutableArray *DataArray;
+@end
 
+@interface comments : NSObject
+@property(assign)NSString *ImageName;
+@property(assign)NSString *title;
+@property(assign)NSString *detail;
+@property(assign)NSString *time;
+
+-(id)initWithImageName:(NSString *)ImageName Andtitle:(NSString *)title Anddetail:(NSString *)detail Andtime:(NSString *)time;
 @end

@@ -15,6 +15,20 @@
 @interface MapViewPage ()
 
 @end
+@implementation Config
+
+-(id)initConfigWithName:(NSString *)Name AndAddress:(NSString *)Address{
+    if(self=[super init]){
+        self.Name=Name;
+        self.Address=Address;
+    }
+    return self;
+}
+
+//-(NSString *)description{
+//    return [NSString stringWithFormat:@"Name_%@ Address_%@",self.Name,self.Address];
+//}
+@end
 
 @implementation MapViewPage
 
@@ -83,7 +97,8 @@
     {
         for (AMapPOI *poi in response.pois)
         {
-            [self.AnnotationNote addObject:poi.name];
+            Config *config=[[Config alloc]initConfigWithName:poi.name AndAddress:poi.address];
+            [self.AnnotationNote addObject:config];
         }
         [self.Table reloadData];
     }
@@ -99,7 +114,7 @@
 
 #pragma Mark - Initialization
 -(void)initMapView{
-    self.mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 44, 320, 280)];
+    self.mapView = [[MAMapView alloc] initWithFrame:CGRectMake(2, 44, 316, 280)];
     self.mapView.delegate=self;
     [self.view addSubview:self.mapView];
     self.mapView.visibleMapRect=MAMapRectMake(220880104, 101476980, 272496, 466656);
@@ -159,8 +174,18 @@
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                  reuseIdentifier: CellIdentifier] ;
     //NSLog(@"%d__%@",indexPath.row,[self.AnnotationNote objectAtIndex:indexPath.row]);
-    cell.textLabel.text=[self.AnnotationNote objectAtIndex:indexPath.row];
-    
+//    cell.textLabel.text=[self.AnnotationNote objectAtIndex:indexPath.row];
+    Config *config=[self.AnnotationNote objectAtIndex:indexPath.row];
+    UILabel *la1=[[UILabel alloc]initWithFrame:CGRectMake(15, 0, 260, 18)];
+    la1.text=config.Name;
+    la1.font=[UIFont fontWithName:nil size:12];
+    la1.textColor=[UIColor grayColor];
+    [cell addSubview:la1];
+    UILabel *la2=[[UILabel alloc]initWithFrame:CGRectMake(15, 15, 260, 18)];
+    la2.text=config.Address;
+    la2.font=[UIFont fontWithName:nil size:12];
+    la2.textColor=[UIColor grayColor];
+    [cell addSubview:la2];
     return cell;
     
 }
@@ -171,7 +196,8 @@
     NSDateComponents *comps;
     comps=[calendar components:(NSYearCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit) fromDate:date];
     NSString *Time=[NSString stringWithFormat:@"%ld:%ld",(long)[comps hour],(long)[comps minute]];
-    NSString *Note=[NSString stringWithFormat:@"%@ %@",Time,[self.AnnotationNote objectAtIndex:indexPath.row]];
+    Config *config=[self.AnnotationNote objectAtIndex:indexPath.row];
+    NSString *Note=[NSString stringWithFormat:@"%@ 在 %@",Time,config.Name];
     [[GameUtils getCurrentUserInfo].CheckInPlace addObject:Note];
     [self retureAction];
 }

@@ -112,6 +112,7 @@
         TableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
         cell.label.text=[self.Data objectAtIndex:[self Upsidedown:indexPath.row]];
+        cell.label.textColor=[UIColor blueColor];
         cell.backgroundColor=[UIColor clearColor];
     
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];

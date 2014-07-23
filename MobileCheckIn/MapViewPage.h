@@ -28,4 +28,9 @@
 
 @end
 
+@interface Config : NSObject
+@property(nonatomic,strong)NSString *Name;
+@property(nonatomic,strong)NSString *Address;
+-(id)initConfigWithName:(NSString *)Name AndAddress:(NSString *)Address;
 
+@end
